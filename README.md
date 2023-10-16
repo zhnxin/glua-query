@@ -20,7 +20,7 @@ func main(){
 	args.Append(lua.LString(string([]byte{60, 117, 108, 62, 60, 108, 105, 32, 104, 114, 101, 102, 61, 34, 104, 116, 116, 112, 58, 47, 47, 103, 105, 116, 104, 117, 98, 46, 99, 111, 109, 34, 62, 210, 188, 60, 47, 108, 105, 62, 60, 108, 105, 62, 183, 161, 60, 47, 108, 105, 62, 60, 108, 105, 62, 200, 254, 60, 47, 108, 105, 62})))
 	L.SetGlobal("args", args)
     err := L.DoString(`
-local query = require("query")
+local query = require("goquery")
 local node,err = query.new('<ul>    <li><a href="http://github.com/zhnxin/glua-query">1</a></li>    <li>2</li>    <li>3</li></ul>')
 if err == nil then
     local element = node:find_first('li')

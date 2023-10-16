@@ -6,7 +6,7 @@ import (
 )
 
 var (
-	luaQeuryTypeName = "query"
+	luaQeuryTypeName = "goquery"
 )
 
 type IQuerySelection interface {
@@ -89,6 +89,7 @@ func (q *querySelection) findFirst(L *lua.LState) int {
 		L.Push(newLUserDataWithSelection(element, L))
 		return 1
 	}
+	L.Push(lua.LNil)
 	return 1
 
 }

@@ -7,7 +7,7 @@ import lua "github.com/yuin/gopher-lua"
 //
 //	local query = require("query")
 func Preload(L *lua.LState) {
-	L.PreloadModule("query", Loader)
+	L.PreloadModule(luaQeuryTypeName, Loader)
 }
 
 // Loader is the module loader function.
