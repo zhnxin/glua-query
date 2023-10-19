@@ -30,6 +30,7 @@ func ApiNewWithEncoding(L *lua.LState) int {
 	if L.GetTop() > 2 {
 		encoding = L.CheckString(3)
 	}
+	L.Pop(L.GetTop())
 	switch strings.ToLower(encoding) {
 	case "gb18030":
 		doc, err = goquery.NewDocumentFromReader(transform.NewReader(bytes.NewReader(body),
